@@ -1,6 +1,6 @@
 import { Heroe } from './../../clases/heroe';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 
 import { Datos } from './../datos';
 
@@ -23,14 +23,14 @@ export class FormularioComponent implements OnInit {
     //this.cargar.emit(this.miHeroe);
 
     //para reactive
-    console.log(this.formularioHeroe.value);
+    console.log(this.formularioHeroe.invalid);
     this.cargar.emit(this.formularioHeroe.value);
   }
 
   ngOnInit() {
     this.formularioHeroe = new FormGroup({
-      id: new FormControl(''),
-      nombre: new FormControl(''),
+      id: new FormControl('null'),
+      nombre: new FormControl('', [Validators.minLength(4)]),
       sexo: new FormControl(''),
       poder: new FormControl(''),
       terreno: new FormControl('')
