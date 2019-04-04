@@ -29,7 +29,7 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {
     this.formularioHeroe = new FormGroup({
-      id: new FormControl('null'),
+      id: new FormControl(''),
       nombre: new FormControl('', [Validators.minLength(4)]),
       sexo: new FormControl(''),
       poder: new FormControl(''),
