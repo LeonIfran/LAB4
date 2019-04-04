@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './fila.component.html',
   styleUrls: ['./fila.component.css']
 })
-export class FilaComponent implements OnInit, Input {
+export class FilaComponent implements OnInit {
   @Input() objeto : object;
   constructor() { }
 

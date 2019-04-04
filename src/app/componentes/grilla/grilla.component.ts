@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './grilla.component.html',
   styleUrls: ['./grilla.component.css']
 })
-export class GrillaComponent implements OnInit, Input {
+export class GrillaComponent implements OnInit {
  @Input() listado : Array<object>;
   constructor() { }
 

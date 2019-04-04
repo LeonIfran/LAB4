@@ -1,3 +1,4 @@
+import { Heroe } from './../../clases/heroe';
 import { Datos } from './../datos';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,21 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
   midato;
-  listado;
+  listado: Array<Heroe>;
   constructor() {
      this.midato = new Datos();
      this.listado = this.midato.lista;
   }
-
+  public cargar(dato: Heroe)
+  {
+    console.log(dato);
+    this.listado.push(dato);
+  }
   ngOnInit() {
   }
-/*  listado:Array<Object>[
-   id:string,
-  nombre:"",
-  sexo:["masculino", "femenino", "otro"],
-  poder:"",
-  terreno:["tierra", "aire", "agua", "fuego"],
-]; */
+
 
 
 }

@@ -7,16 +7,18 @@ import { AppComponent } from './app.component';
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { GrillaComponent } from './componentes/grilla/grilla.component';
 import { FilaComponent } from './componentes/fila/fila.component';
+import { FormularioComponent } from './componentes/formulario/formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     GrillaComponent,
-    FilaComponent
+    FilaComponent,
+    FormularioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
