@@ -1,5 +1,7 @@
 import { Heroe } from './../../clases/heroe';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
 import { Datos } from './../datos';
 
 @Component({
@@ -8,19 +10,31 @@ import { Datos } from './../datos';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  miHeroe: Heroe;
-  @Output() cargar = new EventEmitter<Heroe>();
+  miHeroe: Heroe;//atributo de tipo heroe
+  @Output() cargar = new EventEmitter<Heroe>();//bindeo para pasarle datos al padre
+  formularioHeroe: FormGroup;
   constructor() {
     this.miHeroe = new Heroe();
   }
   public logear()
   {
-    console.log(this.miHeroe);
-    this.cargar.emit(this.miHeroe);
+    //---para pasar con el formulario normal---
+    //console.log(this.miHeroe);
+    //this.cargar.emit(this.miHeroe);
+
+    //para reactive
+    console.log(this.formularioHeroe.value);
+    this.cargar.emit(this.formularioHeroe.value);
   }
 
   ngOnInit() {
-    //console.log(this.miHeroe);
+    this.formularioHeroe = new FormGroup({
+      id: new FormControl(''),
+      nombre: new FormControl(''),
+      sexo: new FormControl(''),
+      poder: new FormControl(''),
+      terreno: new FormControl('')
+    });
 
   }
 
